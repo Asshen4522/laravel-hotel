@@ -19,6 +19,7 @@ class CreateBookingsTable extends Migration
             $table->date('date_of_arrival');
             $table->date('date_of_departure');
             $table->string('code', 6)->unique();
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 

@@ -15,8 +15,8 @@ class CreatePlacesOptionsTable extends Migration
     {
         Schema::create('places_options', function (Blueprint $table) {
             $table->id();
-            $table->integer('place_id');
-            $table->integer('option_id');
+            $table->foreignId('place_id')->constrained('places');
+            $table->foreignId('option_id')->constrained('additional_options');
         });
     }
 
